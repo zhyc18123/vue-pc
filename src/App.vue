@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/img/logo.png">
-    <router-view/>
+    <v-header/>
+		<transition name="router-fade" mode="out-in">
+			<keep-alive>
+			    <router-view v-if="$route.meta.keepAlive"></router-view>
+			</keep-alive>
+    	</transition>
+    	<transition name="router-fade" mode="out-in">
+			<router-view v-if="!$route.meta.keepAlive"></router-view>
+		</transition>
+    <v-footer/>
   </div>
 </template>
 
 <script>
+import VHeader from 'base/Header'
+import VFooter from 'base/Footer'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    VHeader,
+    VFooter
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus" scoped>
+#app
+  min-height 100%
+  position relative
 </style>
+
