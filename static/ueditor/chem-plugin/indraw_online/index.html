@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>indraw</title>
+    <meta name="author" content="integle" />
+    <meta name="keywords" content="integle" />
+    <link type="text/css" rel="stylesheet" href="css/indraw.min.css?t=1475329317894" />
+
+</head>
+
+<body>
+    <div id="chemview">
+        <!--<div id="menu"></div> -->
+        <div id="content" style="top:0;">
+            <div id="main-layer" class="layer layout-vsplit">
+                <div id="sketcher" style="right:0;">
+                    <div id="molpad" class="sketcher">
+                        <div id="chem-tools" class="toolbar" style="" data-name="tools">
+                            <div data-name="tinyscroll" style="">
+                                <div>
+                                    <div class="toolbar-inner clearfix">
+                                        <div id="action-mp-rect" class="tool-button primary-tool" title="Rectangle selection"></div>
+                                        <div id="action-mp-lasso" class="tool-button primary-tool tool-button-selected" title="Lasso selection"></div>
+                                        <div id="action-mp-bond-single" class="tool-button primary-tool" title="Single bond"></div>
+                                        <div id="action-mp-drag" class="tool-button primary-tool" title="Drag atoms and bonds"></div>
+                                        <div id="action-mp-bond-double" data-button="" class="tool-button primary-tool" style="position:relative;" title="Double bond">
+                                            <div class="act-wrap">
+                                                <div id="action-mp-bond-double" class="tool-button primary-tool" title="Double bond"></div>
+                                                <div id="action-mp-bond-aromatic" class="tool-button primary-tool" title="Aromatic bond"></div>
+                                                <div id="action-mp-bond-any" class="tool-button primary-tool" title="Any bond"></div>
+                                                <div id="action-mp-bond-sgaromatic" class="tool-button primary-tool" title="Single/Aromatic bond"></div>
+                                                <div id="action-mp-bond-cross" class="tool-button primary-tool" title="Double Either bond"></div>
+
+                                                <div id="action-mp-bond-dlaromatic" class="tool-button primary-tool" title="Double/Aromatic bond"></div>
+                                                <div id="action-mp-bond-singledouble" class="tool-button primary-tool" title="Single/Double bond"></div>
+                                                <div id="action-mp-bond-down" class="tool-button primary-tool" title="Down bond"></div>
+                                                <div id="action-mp-bond-hydrobond" class="tool-button primary-tool" title="Hydrogen bond"></div>
+                                            </div>
+                                        </div>
+                                        <div id="action-mp-bond-cord" class="tool-button primary-tool" title="Coordinate bond"></div>
+                                        <div id="action-mp-bond-triple" class="tool-button primary-tool" title="Triple bond"></div>
+                                        <div id="action-mp-straightArrow2" data-button="" class="tool-button primary-tool" style="position:relative;" title="straightArrow">
+                                            <div class="act-wrap" style="height:auto; width: 280px;">
+                                                <div id="action-mp-straightArrow2" class="tool-button primary-tool" title="Solid (Large)"></div>
+                                                <div id="action-mp-straightArrow1" class="tool-button primary-tool" title="Solid (Medium)"></div>
+                                                <div id="action-mp-straightArrow" class="tool-button primary-tool" title="Solid (Small)"></div>
+                                                <div id="action-mp-reverse2" class="tool-button primary-tool" title="Hollow (Large)"></div>
+                                                <div id="action-mp-reverse8" class="tool-button primary-tool" title="Hollow (Medium)"></div>
+                                                <div id="action-mp-reverse9" class="tool-button primary-tool" title="RetroSynthetic (Large)"></div>
+                                                <div id="action-mp-reverse10" class="tool-button primary-tool" title="RetroSynthetic (Small)"></div>
+
+                                                <div id="action-mp-straightArrow5" class="tool-button primary-tool" title="Bold (Large)"></div>
+                                                <div id="action-mp-straightArrow4" class="tool-button primary-tool" title="Bold (Medium)"></div>
+                                                <div id="action-mp-straightArrow3" class="tool-button primary-tool" title="Bold (Small)"></div>
+                                                <div id="action-mp-curveArrow7" class="tool-button primary-tool" title="270° CW"></div>
+                                                <div id="action-mp-curveArrow6" class="tool-button primary-tool" title="180° CW"></div>
+                                                <div id="action-mp-curveArrow5" class="tool-button primary-tool" title="120° CW"></div>
+                                                <div id="action-mp-curveArrow4" class="tool-button primary-tool" title="90° CW"></div>
+
+                                                <div id="action-mp-straightArrow8" class="tool-button primary-tool" title="Dashed (Large)"></div>
+                                                <div id="action-mp-straightArrow7" class="tool-button primary-tool" title="Dashed (Medium)"></div>
+                                                <div id="action-mp-straightArrow6" class="tool-button primary-tool" title="Dashed (Small)"></div>
+                                                <div id="action-mp-curveArrow3" class="tool-button primary-tool" title="270° CCW"></div>
+                                                <div id="action-mp-curveArrow2" class="tool-button primary-tool" title="180° CCW"></div>
+                                                <div id="action-mp-curveArrow1" class="tool-button primary-tool" title="120° CCW"></div>
+                                                <div id="action-mp-curveArrow" class="tool-button primary-tool" title="90° CCW"></div>
+
+                                                <div id="action-mp-straightArrow11" class="tool-button primary-tool" title="One-sided (Left) (Large)"></div>
+                                                <div id="action-mp-straightArrow10" class="tool-button primary-tool" title="One-sided (Left) (Medium)"></div>
+                                                <div id="action-mp-straightArrow9" class="tool-button primary-tool" title="One-sided (Left) (Small)"></div>
+                                                <div id="action-mp-curveArrow15" class="tool-button primary-tool" title="270 Single CW"></div>
+                                                <div id="action-mp-curveArrow14" class="tool-button primary-tool" title="180 Single CW"></div>
+                                                <div id="action-mp-curveArrow13" class="tool-button primary-tool" title="120 Single CW"></div>
+                                                <div id="action-mp-curveArrow12" class="tool-button primary-tool" title="90 Single CW"></div>
+
+                                                <div id="action-mp-straightArrow14" class="tool-button primary-tool" title="One-sided (Right) (Large)"></div>
+                                                <div id="action-mp-straightArrow13" class="tool-button primary-tool" title="One-sided (Right) (Medium)"></div>
+                                                <div id="action-mp-straightArrow12" class="tool-button primary-tool" title="One-sided (Right) (Small)"></div>
+                                                <div id="action-mp-curveArrow11" class="tool-button primary-tool" title="270° Single CCW"></div>
+                                                <div id="action-mp-curveArrow10" class="tool-button primary-tool" title="180° Single CCW"></div>
+                                                <div id="action-mp-curveArrow9" class="tool-button primary-tool" title="120° Single CCW"></div>
+                                                <div id="action-mp-curveArrow8" class="tool-button primary-tool" title="90° Single CCW"></div>
+
+                                                <div id="action-mp-straightArrow17" class="tool-button primary-tool" title="Resonance (Large)"></div>
+                                                <div id="action-mp-straightArrow16" class="tool-button primary-tool" title="Resonance (Meidum)"></div>
+                                                <div id="action-mp-straightArrow15" class="tool-button primary-tool" title="Resonance (Small)"></div>
+                                                <div id="action-mp-curveArrow19" class="tool-button primary-tool" title="270° 2 Headed"></div>
+                                                <div id="action-mp-curveArrow18" class="tool-button primary-tool" title="180° 2 Headed"></div>
+                                                <div id="action-mp-curveArrow17" class="tool-button primary-tool" title="120° 2 Headed"></div>
+                                                <div id="action-mp-curveArrow16" class="tool-button primary-tool" title="90° 2 Headed"></div>
+
+                                                <div id="action-mp-straightArrow20" class="tool-button primary-tool" title="No Go (Cross) Large"></div>
+                                                <div id="action-mp-straightArrow19" class="tool-button primary-tool" title="No Go (Cross) Medium"></div>
+                                                <div id="action-mp-straightArrow18" class="tool-button primary-tool" title="No Go (Cross) Small"></div>
+                                                <div id="action-mp-reverse4" class="tool-button primary-tool" title="Equilibrium (Large)"></div>
+                                                <div id="action-mp-reverse3" class="tool-button primary-tool" title="Equilibrium (Medium)"></div>
+                                                <div id="action-mp-reverse" class="tool-button primary-tool" title="Equilibrium (Small)"></div>
+                                                <div id="action-mp-curveArrow20" class="tool-button primary-tool" title="270° Eliptical CW"></div>
+
+                                                <div id="action-mp-straightArrow23" class="tool-button primary-tool" title="No Go (Hash) Large"></div>
+                                                <div id="action-mp-straightArrow22" class="tool-button primary-tool" title="No Go (Hash) Medium"></div>
+                                                <div id="action-mp-straightArrow21" class="tool-button primary-tool" title="No Go (Hash) Small"></div>
+                                                <div id="action-mp-reverse7" class="tool-button primary-tool" title="Unbanlanced Equlibrium (Large)"></div>
+                                                <div id="action-mp-reverse6" class="tool-button primary-tool" title="Unbanlanced Equlibrium (Medium)"></div>
+                                                <div id="action-mp-reverse5" class="tool-button primary-tool" title="Unbanlanced Equlibrium (Small)"></div>
+                                                <div id="action-mp-curveArrow21" class="tool-button primary-tool" title="270° Eliptical CCW"></div>
+                                            </div>
+                                        </div>
+
+
+                                        <div id="action-mp-bond-wedge" class="tool-button primary-tool" title="Wedge bond"></div>
+                                        <div id="action-mp-textbox" class="tool-button primary-tool" title="Text"></div>
+                                        <div id="action-mp-bond-hash" class="tool-button primary-tool" title="Hash bond"></div>
+                                        <div id="action-mp-bond-wedge-2" class="tool-button primary-tool" title="Hollow Wedge bond"></div>
+                                        <div id="action-mp-bond-up" class="tool-button primary-tool" title="Up bond"></div>
+                                        <div id="action-mp-chain" class="tool-button primary-tool" title="Carbon chain"></div>
+                                        <div id="action-mp-multiBond" class="tool-button primary-tool" title="MultiBond"></div>
+                                        <div id="action-mp-frag-cyclopropane" class="tool-button primary-tool" title="Cyclopropane"></div>
+                                        <div id="action-mp-frag-cyclobutane" class="tool-button primary-tool" title="Cyclobutane"></div>
+                                        <div id="action-mp-frag-cyclopentane" class="tool-button primary-tool" title="Cyclopentane"></div>
+                                        <div id="action-mp-frag-cyclohexane" class="tool-button primary-tool" title="Cyclohexane"></div>
+                                        <div id="action-mp-frag-cycloheptane" class="tool-button primary-tool" title="Cycloheptane"></div>
+                                        <div id="action-mp-frag-cyclooctane" class="tool-button primary-tool" title="Cyclooctane"></div>
+                                        <div id="action-mp-frag-cyclopentadiene" class="tool-button primary-tool" title="Cyclopentadiene"></div>
+                                        <div id="action-mp-frag-benzene" data-button="" class="tool-button primary-tool" title="Rings" style="position:relative;opacity:.8;">
+                                            <div class="act-wrap" style="height: auto; width: 120px;">
+                                                <div id="action-mp-frag-benzene" class="tool-button primary-tool" title="Benzene"></div>
+                                                <div id="action-mp-frag-aromatic-benzene" class="tool-button primary-tool" title="Aromatic Benzene"></div>
+                                                <div id="action-mp-frag-aromatic-cyclopentane" class="tool-button primary-tool" title="Aromatic Cyclopentane"></div>
+                                            </div>
+                                        </div>
+                                        <div id="action-mp-charge-add" data-button="" class="tool-button primary-tool" title="Charge +" style="position:relative;">
+                                            <div class="act-wrap">
+                                                <div id="action-mp-charge-add" class="tool-button primary-tool" title="Charge +"></div>
+                                                <div id="action-mp-charge-sub" class="tool-button primary-tool" title="Charge -"></div>
+                                                <div id="action-mp-doublet" class="tool-button primary-tool" title="Doublet"></div>
+                                                <div id="action-mp-singlet" class="tool-button primary-tool" title="Lone Pair Electron(Singlet)"></div>
+                                                <div id="action-mp-triplet" class="tool-button primary-tool" title="Triplet"></div>
+                                            </div>
+                                        </div>
+                                        <div id="action-mp-fd-rect" data-button="" class="tool-button primary-tool" style="opacity:.8;" title="flowDiagram">
+                                            <div class="act-wrap" style="height: auto; width: 320px;">
+                                                <div id="action-mp-fd-circle" class="tool-button primary-tool fd-circle" data-class="fd-circle" title="Circle"></div>
+                                                <div id="action-mp-fd-dashCircle" class="tool-button primary-tool fd-dashCircle" data-class="fd-dashCircle" title="DashCircle"></div>
+                                                <div id="action-mp-fd-3dCircle" class="tool-button primary-tool fd-3dCircle" data-class="fd-3dCircle" title="3dCircle"></div>
+                                                <div id="action-mp-fd-solidCircle" class="tool-button primary-tool fd-solidCircle" data-class="fd-solidCircle" title="SolidCircle"></div>
+                                                <div id="action-mp-fd-shadowCircle" class="tool-button primary-tool fd-shadowCircle" data-class="fd-shadowCircle" title="ShadowCircle"></div>
+                                                <div id="action-mp-fd-line" class="tool-button primary-tool fd-line" data-class="fd-line" title="line"></div>
+                                                <div id="action-mp-fd-arc270" class="tool-button primary-tool fd-arc270" data-class="fd-arc270" title="Arc270°"></div>
+                                                <div id="action-mp-fd-dashArc270" class="tool-button primary-tool fd-dashArc270" data-class="fd-dashArc270" title="DashArc270°"></div>
+                                                <div id="action-mp-fd-ellipse" class="tool-button primary-tool fd-ellipse" data-class="fd-ellipse" title="Ellipse"></div>
+                                                <div id="action-mp-fd-dashEllipse" class="tool-button primary-tool fd-dashEllipse" data-class="fd-dashEllipse" title="DashEllipse"></div>
+                                                <div id="action-mp-fd-3dEllipse" class="tool-button primary-tool fd-3dEllipse" data-class="fd-3dEllipse" title="3dEllipse"></div>
+                                                <div id="action-mp-fd-solidEllipse" class="tool-button primary-tool fd-solidEllipse" data-class="fd-solidEllipse" title="SolidEllipse"></div>
+                                                <div id="action-mp-fd-shadowEllipse" class="tool-button primary-tool fd-shadowEllipse" data-class="fd-shadowEllipse" title="ShadowEllipse"></div>
+                                                <div id="action-mp-fd-dashLine" class="tool-button primary-tool fd-dashLine" data-class="fd-dashLine" title="DashLine"></div>
+                                                <div id="action-mp-fd-arc180" class="tool-button primary-tool fd-arc180" data-class="fd-arc180" title="Arc180°"></div>
+                                                <div id="action-mp-fd-dashArc180" class="tool-button primary-tool fd-dashArc180" data-class="fd-dashArc180" title="DashArc180°"></div>
+                                                <div id="action-mp-fd-roundedRect" class="tool-button primary-tool fd-roundedRect" data-class="fd-roundedRect" title="RoundedRect"></div>
+                                                <div id="action-mp-fd-dashRoundedRect" class="tool-button primary-tool fd-dashRoundedRect" data-class="fd-dashRoundedRect"
+                                                    title="DashRoundedRect"></div>
+                                                <div id="action-mp-fd-3dRoundedRect" class="tool-button primary-tool fd-3dRoundedRect" data-class="fd-3dRoundedRect" title="3dRoundedRect"></div>
+                                                <div id="action-mp-fd-solidRoundedRect" class="tool-button primary-tool fd-solidRoundedRect" data-class="fd-solidRoundedRect"
+                                                    title="SolidRoundedRect"></div>
+                                                <div id="action-mp-fd-shadowRoundedRect" class="tool-button primary-tool fd-shadowRoundedRect" data-class="fd-shadowRoundedRect"
+                                                    title="ShadowRoundedRect"></div>
+                                                <div id="action-mp-fd-arcLine" class="tool-button primary-tool fd-arcLine" data-class="fd-arcLine" title="ArcLine"></div>
+                                                <div id="action-mp-fd-arc120" class="tool-button primary-tool fd-arc120" data-class="fd-arc120" title="Arc120°"></div>
+                                                <div id="action-mp-fd-dashArc120" class="tool-button primary-tool fd-dashArc120" data-class="fd-dashArc120" title="DashArc120°"></div>
+                                                <div id="action-mp-fd-rect" class="tool-button primary-tool fd-rect" data-class="fd-rect" title="Rect"></div>
+                                                <div id="action-mp-fd-dashRect" class="tool-button primary-tool fd-dashRect" data-class="fd-dashRect" title="DashRect"></div>
+                                                <div id="action-mp-fd-3dRect" class="tool-button primary-tool fd-3dRect" data-class="fd-3dRect" title="3dRect"></div>
+                                                <div id="action-mp-fd-solidRect" class="tool-button primary-tool fd-solidRect" data-class="fd-solidRect" title="SolidRect"></div>
+                                                <div id="action-mp-fd-shadowRect" class="tool-button primary-tool fd-shadowRect" data-class="fd-shadowRect" title="ShadowRect"></div>
+                                                <div id="action-mp-fd-boldLine" class="tool-button primary-tool fd-boldLine" data-class="fd-boldLine" title="BoldLine"></div>
+                                                <div id="action-mp-fd-arc90" class="tool-button primary-tool fd-arc90" data-class="fd-arc90" title="Arc90°"></div>
+                                                <div id="action-mp-fd-dashArc90" class="tool-button primary-tool fd-dashArc90" data-class="fd-dashArc90" title="DashArc90°"></div>
+                                            </div>
+                                        </div>
+                                        <div id="action-mp-bracket" data-button="" class="tool-button primary-tool" style="position:relative;opacity:.7" title="Bracket">
+                                            <div class="act-wrap">
+                                                <div id="action-mp-bracket" class="tool-button primary-tool" title="Bracket"></div>
+                                                <div id="action-mp-rbracket" class="tool-button primary-tool" title="Round Bracket"></div>
+                                                <div id="action-mp-sgroup" class="tool-button primary-tool" title="SGroup Bracket"></div>
+                                            </div>
+                                        </div>
+                                        <!--<div id="action-mp-svgtemplate" class="tool-button primary-tool" title="default Template"></div>-->
+                                        <!--<div id="action-mp-savefullpic" class="tool-button primary-tool" title="Save Structure"></div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="edit-tools" data-name="tools" style="background:transparent;">
+                            <div class="toolbar-inner clearfix" style="position:relative;left:5px;">
+                                <!--<div id="action-mp-persp" class="tool-button primary-tool tool-button-horizontal"  title="Perspective View"></div>-->
+                                <div id="action-mp-eraser" class="tool-button  primary-tool" title="Erase"></div>
+                                <div id="action-mp-clear" class="tool-button tool-button-horizontal" title="Clear all"></div>
+                                <!--<div id="action-mp-import" class="tool-button tool-button-horizontal primary-tool" title="Open" data-name="modalbox" data-title="Open" data-class="xiezhaotong" data-content='<div class="modal-import"><ul class="modal-import-head clearfix"><li class="active"><a href="javascript:;">上传文件</a></li><li><a href="javascript:;">粘贴内容</a></li></ul><div class="modal-import-content"><div class="modal-import-content-item"><p data-name="drag-file"><input type="file" data-name="upload-file"><span>拖拽文件到此区域并松开鼠标或点击上传</span><span>（文件格式支持 int 、mol）</span></p></div><div class="modal-import-content-item hide" ><textarea data-name="edit-upload-content" placeholder="在此区域粘贴int、mol，然后点击导入按钮即可"></textarea><p class="modal-import-content-button"><a href="javascript:;" data-name="empty-content">清空</a><a href="javascript:;" data-name="import-button">导入</a></p></div></div></div>'>-->
+                                <!--</div>-->
+
+                                <div id="action-mp-import" class="tool-button tool-button-horizontal primary-tool" title="Open"></div>
+                                <!--<div id="action-mp-export" class="tool-button tool-button-horizontal primary-tool" title="Save" data-name="modalbox" data-title="Save" data-content='<div class="modal-export"><div class="modal-export-head clearfix"><span class="modal-export-type">请选择导出文件的类型：</span><div data-name="imitateSelect" ><select><option value="mol">MDL Molfile ( * .mol )</option><option value="smiles">SMILES</option><option value="int" selected>Integle (* .int)</option></select></div></div><div class="modal-export-content"><div class="modal-export-content-text"><div data-name="export-scroll" class="tinyscroll"><div class="tinyscroll-content"><div contenteditable="true" data-name="export-data"></div></div></div></div><a href="javascript:;" data-name="download-file">Save</a></div></div>'>-->
+                                <!--</div>-->
+                                <div id="action-mp-export" class="tool-button tool-button-horizontal primary-tool" title="Save"></div>
+
+                                <div id="action-mp-undo" class="tool-button tool-button-horizontal tool-button-disabled" title="Undo"></div>
+                                <div id="action-mp-redo" class="tool-button tool-button-horizontal tool-button-disabled" title="Redo"></div>
+
+                                <div id="action-mp-leftFlip" class="tool-button primary-tool tool-button-horizontal" style="display:none" title="Flip Horizontal"></div>
+                                <div id="action-mp-upFlip" class="tool-button primary-tool tool-button-horizontal" style="display:none" title="Flip Vertical"></div>
+
+                                <!--<div id="indraw-fullScreen" class="tool-button tool-button-horizontal" title="Full Screen"> </div>-->
+                                <div id="action-mp-center" class="tool-button tool-button-horizontal" title="Caculations" style=""></div>
+
+                                <div id="setColor" class="tool-button tool-button-horizontal tool-button-disabled" title="Colors" style="position: relative;">
+                                    <div id="action-mp-selectColor"></div>
+                                </div>
+
+
+                                <div id="action-mp-cleanUp" class="tool-button tool-button-horizontal" style="display:none" title="Clean Up Structure"></div>
+                                <div id="action-mp-topbottom" class="tool-button primary-tool tool-button-horizontal" style="position:relative;" title="T/B centers">
+                                    <span title="dropdown" class="icon-down"></span>
+                                    <div class="act-wrap-align">
+                                        <div id="action-mp-left" class="tool-button primary-tool tool-button-horizontal " title="Left edges"></div>
+                                        <div id="action-mp-right" class="tool-button primary-tool tool-button-horizontal" title="Right edges"></div>
+                                        <div id="action-mp-leftright" class="tool-button primary-tool tool-button-horizontal" title="L/R centers"></div>
+                                        <div id="action-mp-top" class="tool-button primary-tool tool-button-horizontal" title="Top edges"></div>
+                                        <div id="action-mp-bottom" class="tool-button primary-tool tool-button-horizontal" title="Bottom edges"></div>
+                                        <div id="action-mp-topbottom" class="tool-button primary-tool tool-button-horizontal" title="T/B centers"></div>
+                                    </div>
+                                </div>
+
+                                <!--<div id="action-mp-SN" class="tool-button primary-tool tool-button-horizontal" title="Structure to name"></div>-->
+                                <!--<div id="action-mp-NS" class="tool-button primary-tool tool-button-horizontal" style="" title="Name to structure"></div>-->
+
+                                <div id="action-mp-resetMol" class="tool-button primary-tool tool-button-horizontal" style="display:none" title="Reset mol">Reset
+                                </div>
+                                <div id="action-mp-acs" class="tool-button tool-button-horizontal" title="ACS Document 1996" style="color: #777;font-size: 18px;position: relative;transform: scale(.61);opacity:0.8;"></div>
+
+                                <div id="action-mp-atom-c" class="tool-button primary-tool tool-element element-colored character-tools" title="Carbon" style="opacity:.8;"></div>
+                                <div id="action-mp-atom-h" class="tool-button primary-tool tool-element element-colored character-tools" title="Hydrogen"
+                                    style="opacity:.8;"></div>
+                                <div id="action-mp-atom-n" class="tool-button primary-tool tool-element element-colored character-tools" title="Nitrogen"></div>
+                                <div id="action-mp-atom-o" class="tool-button primary-tool tool-element element-colored character-tools" title="Oxygen"></div>
+                                <div id="action-mp-atom-s" class="tool-button primary-tool tool-element element-colored character-tools" title="Sulfur"></div>
+                                <div id="action-mp-atom-cl" class="tool-button primary-tool tool-element element-colored character-tools" title="Chlorine"></div>
+                                <div id="action-mp-atom-br" class="tool-button primary-tool tool-element element-colored character-tools" title="Bromine"
+                                    style="opacity:0.8;"></div>
+                                <div id="action-mp-periodictable" class="tool-button primary-tool" title="Periodic Table"></div>
+                                <!--<div id="action-mp-search" class="tool-button tool-button-horizontal tool-button-disabled" title="Structure search"></div> -->
+
+                            </div>
+                        </div>
+                        <div id="indraw-canvas-box" class="vertical"></div>
+                        <a id="vertcial-right-tools" href="javascript:;" style="display:none;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="messages"></div>
+        <div id="autocomplete-dropdown-wrapper" style="display: none;">
+            <div id="autocomplete-dropdown"></div>
+        </div>
+        <div id="dialog-overlay" class="dialog-overlay" style="display:none;">
+            <div id="dialog-click-area">
+                <div class="dialog" id="periodictable-dialog" style="display: none;">
+                    <h2>Periodic Table</h2>
+                    <div id="periodictable"></div>
+                    <div class="footer">
+                        <button class="btn close btn-primary">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialogWindow sgroupDialog sgroup_item" id="sgroup_properties" style="display:none;">
+            <div style="width:auto;">
+                <div style="height:0.5em"></div>
+                <table style="text-align:left; position:relative; margin: 100px auto 0; background:#F1F1F1">
+                    <tr>
+                        <td>
+                            <label style="width: auto;">Type:</label>
+                        </td>
+                        <td>
+                            <select id="sgroup_type" style="position:inherit; width: 200px;">
+                            <option value="GEN" selected="selected" class="noOpt">Generic</option>
+                            <option value="MON" class="noOpt">Monomer</option>
+                            <option value="MER" class="noOpt">Mer</option>
+                            <option value="MOD" class="noOpt">Modification</option>
+                            <option value="MUL" id="mul">Multiple group</option>
+                            <option value="COM" id="component">Component</option>
+                            <option value="SRU" id="sru">SRU polymer</option>
+                            <option value="COP" id="copoly">Copolymer</option>
+                            <option value="ALT" id="copoly_alt">Copolymer, alternating</option>
+                            <option value="BLO" id="copoly_blo">Copolymer, block</option>
+                            <option value="RAN" id="copoly_ran">Copolymer, random</option>
+                            <option value="MIX" id="mix">Mixture</option>
+                            <option value="FOR" id="for">Formulation</option>
+                            <option value="ANY" class="oneOpt">Any polymer</option>
+                            <option value="GRA" class="oneOpt">Graft</option>
+                            <option value="CRO" class="oneOpt">Cross Link</option>
+                            <option value="DAT">Data</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr class="sgroup_connection">
+                        <td>
+                            <label>Connection:</label>
+                        </td>
+                        <td>
+                            <select class="sgroup_connection">
+                            <option value="ht">Head-to-tail</option>
+                            <option value="hh">Head-to-head</option>
+                            <option value="eu">Either unknown</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr class="generalSGroup">
+                        <td>
+                            <label id="sub_label">Label (subscript):</label>
+                        </td>
+                        <td>
+                            <input id="sgroup_label" type="text" maxlength="15" size="15" />
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td>
+                            <label>Field name:</label>
+                        </td>
+                        <td>
+                            <input id="sgroup_field_name" type="text" maxlength="30" size="30" />
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td>
+                            <label>Field value:</label>
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td colspan="2">
+                            <textarea class="dataSGroupValue" id="sgroup_field_value"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="dataSGroup">
+                        <td colspan="2">
+                            <input type="radio" id="sgroup_pos_absolute" name="data_field_pos" checked>Absolute</input>
+                            <input type="radio" id="sgroup_pos_relative" name="data_field_pos">Relative</input>
+                            <input type="radio" id="sgroup_pos_attached" name="data_field_pos">Attached</input>
+                        </td>
+                    </tr>
+                    <tr style="margin-top:0.5em">
+                        <td>
+                            <input id="sgroup_prop_cancel" type="button" value="Cancel" />
+                        </td>
+                        <td>
+                            <input id="sgroup_prop_ok" type="button" value="OK" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 这个最后是需要封装为组件，动态生成的，暂时手写在这 -->
+        <div data-name="cross-post" style="">
+            <iframe name="proxyIframe" id="proxyIframe" src=""></iframe>
+            <form action="http://121.42.195.227/cdxUpload/smiToMol.php" method="post" target="proxyIframe">
+                <input type="hidden" name="smiles" value="" />
+                <input type="hidden" name="callback" value="exportImport.handleSmiles" />
+                <input type="hidden" name="proxy" value="/proxy.html" />
+                <input type="submit" value="btn" data-name="submit-cross-request" />
+            </form>
+        </div>
+        <div id="structure-search" class="search-button search-button-disabled">结构式搜索</div>
+        <a data-name="showLogo" href="javascript:;" target="_blank" title="进一步了解InDraw" style="display:none;"></a>
+    </div>
+<script type="text/javascript" src="../../dialogs/internal.js"></script>
+    <script type="text/javascript" src="js/inchi.js"></script>
+    <script type="text/javascript" src="js/indraw_min.js"></script>
+    <script type="text/javascript" src="js/base64.js"></script>
+    <script>
+        $(window).on("load", function () {
+            $(top.document.body).on("indrawLoaded", function (event) {
+                //console.log("indraw 加载完毕")
+                // event.indraw 就是 InDraw.mol.init 后返回的引用，可以调用各种API
+                console.log('event',event.indraw)
+
+                if (typeof (global) !== "undefined") {
+                    global.requestclipboard && requestclipboard(event.indraw, $);
+                }
+            });
+            InDraw.eln = false;
+            window.isNode = false;
+            if (typeof (require) !== "undefined") {
+                window.isNode = true;
+            }
+
+            var indraw = InDraw.mol.init();
+            window.indraw = indraw;
+            // 可以关闭滚动
+            indraw.settings.stopScroll = true;
+            //下面个用于开关导入分子后知否进行缩放居中
+            indraw.settings.saveSVG = false;
+            //indraw.settings.url.base64ToImage = "./server/to_image.php";
+            // console.log(dialog)
+            console.log('smiles',sessionStorage.getItem('smiles'))
+            console.log(indraw)
+            if(sessionStorage.getItem('smiles')){
+                indraw.loadMultiMol($.base64.decode(sessionStorage.getItem('smiles')))
+            };
+            dialog.onok = function(){
+                console.log('onok')
+                var chemImg=indraw.getCanvasImage(true);
+                var smiles= $.base64.encode(indraw.getMultiMol());
+                console.log(smiles)
+                console.log(chemImg)
+                dialog.editor.execCommand('inserthtml', '<img class="chem-plugin" src="'+ chemImg +'" data-latex="' + smiles + '" />');
+                dialog.close()
+                // dialog.editor.execCommand('get.image.data', function(data){
+                //     // var latex = kfe.execCommand('get.source');
+                //     dialog.editor.execCommand('inserthtml', '<span>ddx</span>');
+                //     dialog.close();
+                // });
+
+                return false;
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

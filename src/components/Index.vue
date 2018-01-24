@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js '
+      msg: '欢迎来到教师成长平台 '
     }
   },
   created () {

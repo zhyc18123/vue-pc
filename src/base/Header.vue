@@ -1,8 +1,14 @@
 <template>
     <div class="header">
-      <span class="cart"><router-link to="/main/goodsOrder">我的购物车 &nbsp;|&nbsp;</router-link></span>
-      <span class="order"><router-link to="/main/user/buy">&nbsp;&nbsp;我的订单 &nbsp;|&nbsp;</router-link></span>
-      <span class="info"><router-link to="/info">关于我们</router-link></span>
+    <!-- logo -->
+    <div class="logo">
+      <router-link to="/index" tag="a">
+        <img src="../assets/img/logo.svg" alt="">
+      </router-link>
+    </div>
+    <div class="head-body">
+
+    </div>
     </div>
 </template>
 
@@ -15,4 +21,20 @@
 <style lang="stylus" scoped>
 .header
   height 80px
+  background linear-gradient(90deg,#009fd7,#01c8c1)
+  .logo
+    background white
+    width 240px
+    height 100%
+    border-bottom 1px solid #e6e6e6
+    img 
+      width 132px
+      height 48px
+      margin-left 54px
+      margin-top 16px
+  .head-body
+    margin-right 240px
+  div
+    display inline-block
+
 </style>

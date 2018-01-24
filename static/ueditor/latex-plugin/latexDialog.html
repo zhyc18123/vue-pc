@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- META -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<!-- TITLE -->
+	<title>LaTex解析器 -- Kity Formula</title>
+	<script src="lib/cm/codemirror.js"></script>
+	<link rel="stylesheet" href="lib/cm/codemirror.css">
+	<script src="lib/cm/stex.js"></script>
+	<script src="lib/cm/active-line.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/fui/fui.all.css">
+	<script src="lib/fui/vash.min.js"></script>
+	<script src="lib/fui/jquery-1.11.1.js"></script>
+	<script src="lib/fui/fui.all.min.js"></script>
+	<script src="./libs/kitygraph.all.min.js"></script>
+	<script src="./libs/kity-formula-render.all.min.js"></script>
+	<script src="./libs/kity-formula-parser.all.min.js"></script>
+	<link rel="stylesheet" href="./stylesheets/parser.css">
+</head>
+
+<body id="body">
+
+<!-- Main Wrapper Start -->
+<div id="content" class="clearfix">
+	<div class="wrapper clearfix">
+		<div class="clearfix krown-column-row" style="padding: 0 0 50px 0px;">
+			<div class="row-content clearfix">
+				<div class="span12 krown-column-container clearfix column_container">
+					<div class="clearfix ">
+						<div class="wpb_wrapper">
+							<div class="parser">
+								<div id="toolbar"></div>
+								<div id="main"></div>
+								<div id="container"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var latexEditor = CodeMirror(document.getElementById("main"),{
+		lineNumbers: true,
+		styleActiveLine: true,
+		mode: "text/x-stex",
+		lineWrapping: true,
+		autofocus: true
+	});
+</script>
+<script type="text/javascript" src="../dialogs/internal.js"></script>
+<script type="text/javascript" src="./javascripts/loadToolBar.js"></script>
+<script type="text/javascript" src="./javascripts/loadLatexParser.js"></script>
+<script>
+	window.onload = function () {
+
+		var img = new Image();
+		img.src = './images/0.png';
+
+		setTimeout(function(){
+			for (var img, i = 1; i < 11; i++){
+				img = new Image();
+				img.src = './images/' + i + '.png';
+			}
+		}, 500);
+
+		if ( document.body.addEventListener ){
+			$("#tips").css("display", "none");
+
+			toolbar.loadToolBar();
+			$(".subPan div").click(toolbar.selectIconCallback);
+
+      var rng = editor.selection.getRange(),
+        img = rng.getClosedNode(),
+        imgLatex = img && $(img).attr('data-latex');
+
+      imgLatex && latexEditor.setValue(imgLatex)
+      if(imgLatex) {
+        latexEditor.setValue(imgLatex)
+        latexParser.parserInit(true);
+      } else {
+        latexParser.parserInit();
+      }
+      latexParser.handleSave();
+    }else{
+			$(".parser").css("display", "none");
+      $('<div id="tips" class="tips">sorry! Beta版本仅支持IE9及以上版本的浏览器，正式版本将会支持低版本浏览器，谢谢您的关注！</div>').appendTo($(".wpb_wrapper"));
+      $("#tips").css( "width", "1158px" ).css( "height", "500px").css( "background-color", "#f6f5ee" ).css( "padding", "10px").css("border", "#e0e0e0 1px solid");
+		}
+	};
+
+	window.onresize = function(){
+		setTimeout(function(){
+
+			var maxHeight= 0,
+				curPanId = tabs.__panels[tabs.__selected].id,
+				$parent = $("#"+curPanId + " .pan");
+
+			$parent.height("auto");
+			$("#"+curPanId+" .subPan").each(function(){
+				var height = $(this).height('100%').height();
+				maxHeight = Math.max(maxHeight, height);
+			});
+			$parent.height(maxHeight);
+
+		}, 0);
+	}
+</script>
+</body>
+</html>

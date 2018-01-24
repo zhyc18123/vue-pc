@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iframe代理页面</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            window.onload = function(){
+                if( top ==self ){
+                    return;
+                }
+                var arr = location.search.substr(1).split("&"),fn,args,attr;
+                for( var i =0,len=arr.length,item;i<len;i++ ){
+                    item = arr[i].split("=");
+                    if( item[0] == "callback" ){
+                        fn = item[1];
+                    }
+                    else if ( item[0] =="arg" ){
+                        args = JSON.parse(decodeURI(item[1]));
+                    }
+                }
+                try {
+                    if( (attr = fn.split(".")).length===2 ){
+                        top[attr.shift()][attr](args);
+                    }
+                    else {
+                         top[fn](args);
+                    }
+                   
+                }catch(e){}
+            }
+            
+        </script>
+    </body>
+</html>

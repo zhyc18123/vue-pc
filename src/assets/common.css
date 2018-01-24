@@ -1,0 +1,297 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: #999;
+}
+img{
+  max-width: 100%;
+}
+ol{
+  width: auto !important;
+}
+.icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width: 1em; height: 1em;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+     normalize.css 中也包含这行 */
+  overflow: hidden;
+}
+
+.el-table th,.el-table__fixed-header-wrapper thead div,.el-table__header-wrapper thead div, .el-table__footer-wrapper thead div{
+  background-color: #dff1f6;
+}
+
+.el-table__expanded-cell{
+  box-shadow:none;
+}
+.el-table::after,.el-table::before{
+  width: 0;
+}
+.el-table{
+  border: 1px solid #bbdde7;
+  border-radius: 4px;
+}
+.el-table--border th, .el-table--border td{
+  border-right: 1px solid #bbdde7;
+}
+.el-table th.is-leaf, .el-table td{
+  border-bottom: 1px solid #bbdde7;
+}
+.el-table tr:last-child td{
+  border-bottom: 0;
+}
+.el-table__fixed, .el-table__fixed-right{
+  box-shadow: 1px 0 8px #bbdde7;
+}
+/*.el-table th > .cell{
+  line-height: 50px;
+}*/
+.el-table th, .el-table td{
+  height: 50px;
+}
+.el-table th{
+  background: #dff1f6 !important;
+}
+.small-table.el-table th, .small-table.el-table td{
+  height: 40px;
+}
+.el-checkbox{
+  color: #666;
+}
+
+.el-textarea__inner{
+    border: 1px solid #cae3ee;
+}
+
+.el-button {
+  color: #20a0ff;
+  border-color: #20a0ff;
+}
+
+.el-button--primary {
+  color: #fff;
+  background-color: #20a0ff;
+  border-color: #20a0ff;
+}
+.el-button--basis {
+  color: #fff;
+  background-color: #00b1d1;
+  border-color: #00b1d1;
+}
+.el-button--basis:hover {
+  color: #fff;
+  background-color: #12b8d6;
+  border-color: #12b8d6;
+}
+.el-carousel__button{
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background-color: #eee;
+}
+.is-active .el-carousel__button{
+  background-color: #69cbf2;
+}
+.el-breadcrumb__item__inner, .el-breadcrumb__item__inner a{
+  color: #999;
+  /*font-size: 14px;*/
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__item__inner, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner:hover, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a:hover{
+  color: #333;
+  /*font-size: 14px;*/
+}
+.el-tabs__item{
+  padding: 0 23px;
+}
+.el-tabs__item:hover{
+  color: #333;
+}
+.el-carousel__container{
+}
+.index .el-carousel__item:nth-child(2n+1),.index .el-carousel__item:nth-child(2n){
+  background-color: white !important;
+}
+.index .el-carousel__item h3{
+  opacity: 1 !important;
+}
+.el-breadcrumb__separator{
+  margin: 0 8px 0 4px;
+}
+.el-input__inner{
+  border-color: #bfebf3;
+}
+.el-radio__inner{
+  color: #00a7eb;
+  /*background: #00a7eb;*/
+}
+.el-select .el-input .el-input__icon{
+  color: #bfebf3;
+}
+.el-checkbox__inner{
+  border-color: #00a7eb;
+}
+.el-checkbox__input.is-checked .el-checkbox__inner{
+  background: #41c8ff;
+  border-color: #41c8ff;
+}
+.el-popover{
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  font-family: "Microsoft YaHei";
+}
+.el-popover[x-placement^="top"] .popper__arrow::after{
+  border-top-color: white;
+  margin-left: -10px;
+}
+.el-popover[x-placement^="top"] .popper__arrow{
+  bottom: -11px;
+  left: 2px;
+}
+.el-popover[x-placement^="right"] .popper__arrow::after{
+  border-right-color: white;
+  bottom: -10px;
+}
+.el-popover[x-placement^="right"] .popper__arrow{
+  left: -11px;
+}
+.el-popover[x-placement^="bottom"] .popper__arrow::after{
+  border-bottom-color: white;
+  margin-left: -10px;
+}
+.el-popover .popper__arrow{
+  border-width: 11px;
+}
+.el-popover .popper__arrow::after{
+  border-width: 10px;
+}
+.el-popover[x-placement^="bottom"] .popper__arrow{
+  top: -11px;
+}
+.el-table__expand-icon{
+  color: #cce6ed;
+}
+.el-table__expanded-cell{
+  padding: 0;
+  background-color:#f8fbfc;
+}
+.el-input__icon{
+        color: #44cee6 !important;
+}
+.el-tabs--card > .el-tabs__header .el-tabs__item{
+border-radius: 4px 4px 0 0;
+}
+.el-tabs__header{
+  box-shadow: 0px -4px 4px #99d5e8 inset;
+  border: 0 ;
+}
+.el-tabs--card > .el-tabs__header .el-tabs__item.is-active{
+  border: 0;
+  font-weight: bold;
+}
+.el-dialog__headerbtn .el-dialog__close{
+  color: white !important;
+}
+.el-dialog__title{
+  color: white;
+}
+.el-dialog__header{
+  background: #3997be !important;
+  border-color: #3997be !important;
+  padding: 12px;
+}
+.el-dialog__body{
+  background: white;
+  padding: 0;
+}
+.el-dialog{
+  background: #eaeaea;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px;
+}
+.v-modal{
+  background: #808080;
+  opacity: .3;
+}
+
+/*editor*/
+.edui-default .edui-editor{
+  border-color: #bfebf3 !important;
+  width: auto !important;
+}
+.edui-default .edui-editor-toolbarboxouter,.edui-default .edui-editor-toolbarbox{
+  box-shadow: 0 0 0 white !important;
+  background: white !important;
+}
+.edui-default .edui-editor-iframeholder{
+  width: 100% !important;
+}
+.edui-default .edui-editor-toolbarboxouter{
+  border-bottom:1px solid #bfebf3 !important;
+}
+.edui-default{
+  border-color: #bfebf3 !important;
+  line-height: 0;
+}
+.edui-default .edui-editor-iframeholder{
+  min-height: 100px;
+}
+.edui-editor-bottomContainer{
+  display: none;
+}
+.no-bottom .edui-default .edui-editor{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#edui1{
+  width: auto !important;
+}
+
+.ztree li .node_name{
+  display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*css*/
+.nav-little {
+    height: 50px;
+    line-height: 50px;
+    color: #999;
+    font-size: 12px;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0 20px;
+}
+.min-button{
+  background: #00b1d1;
+    height: 30px;
+    padding: 0;
+    width: 90px;
+    border: 0;
+}
+
+.demo-table-expand {
+    font-size: 0;
+  }
+  .demo-table-expand label {
+    width: 90px;
+    color: #99a9bf;
+  }
+  .demo-table-expand .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 50%;
+  }

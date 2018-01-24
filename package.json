@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "css-loader": "^0.28.7",
+    "element-ui": "^2.0.11",
     "moment": "^2.20.1",
     "store": "^2.0.12",
     "vue": "^2.5.2",

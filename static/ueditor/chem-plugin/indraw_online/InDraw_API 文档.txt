@@ -1,0 +1,49 @@
+InDraw 网页版 API 文档：
+
+InDraw 初始化：
+
+var indraw = InDraw.mol.init();
+       
+window.indraw = indraw;
+
+接口使用方法：
+
+1. indraw.savePIC(mol字符串 , [width,height]);
+ 传入指定的mol字符串和指定的宽高（宽高可选），生成base64的图片
+
+2. indraw.getCanvasImage(false或者为空): 获取选中的结构生成的base64
+    indraw.getCanvasImage(true): 获取画布上面所有的结构生成的base64 （ 已经去掉了周围的空白）
+
+3. indraw.clear()：
+将画布上绘制的结构式全部清空掉
+
+4. indraw.getMOL()：
+将画布上绘制的结构式转为mol字符串（不包含箭头、文本框）
+
+5. indraw.getMultiMol()：
+导出分子，用于获取带有箭头、文本框信息的mol字符串
+
+6. indraw.loadSmiles(str):
+//导入smiles到结构式编辑器
+
+7. indraw.center()：
+
+将画布上绘制的结构，居中显示
+
+8. indraw.getSMILES()：
+将画布上绘制的结构式转为smiles格式的字符串
+
+9. indraw.loadMOL(str)：
+str参数是一个字符串，用来加载一个mol类型的字符串（不包含箭头、文本框）到结构式编辑器中显示
+
+10. indraw.getMolTypes(isMolfile):
+获取反应箭头上、下、左、右四个方向分子
+isMolfile参数是bool类型（true或者false）用来确定返回结果是否为mol文件格式，此函数用来获取画布上结构式不同化合物类型（分反应底物、催化剂、溶剂、产物）的mol或者smiles
+
+11. indraw.getSelMol(isMolfile):
+isMolfile参数是bool类型，用来决定返回值是mol还是smiles，此函数用来返回选中分子的mol或者smiles
+
+12. indraw.loadNewMol(mol, reactant, product, solvent, catalyst):
+在箭头特定位置导入分子：
+参数mol为分子mol文件内容字符串；reactant为bool类型，决定新导入画布的分子为反应底物；product决定新导入画布的分子为产物；solvent决定新导入画布的分子为溶剂、catalyst决定新导入画布上的分子为催化剂
+此函数功能是将一个mol文件内容字符串加入到现有画布中反应箭头的特定位置（箭头上、下、左、右） 
